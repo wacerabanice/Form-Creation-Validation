@@ -26,7 +26,7 @@ if(!username){
 }
 
 
-if(!emailInput.includes('@') | | !emailInput.includes('.')){
+if(!emailInput.includes('@') || !emailInput.includes('.')){
     isValid = false;
     messages.push('Provide a valid Email');
 }
@@ -43,14 +43,16 @@ if(!isValid){
 console.log('Form successfully submitted')
 }
 
-feedbackDiv.style.display = 'block';
-if(isValid){
-    feedbackDiv.textContent = "Registration Successful";
-    feedbackDiv.style.color = #28a745;
-} else{
-    feedbackDiv.innerHTML = messages.join('<br>');
-    feedbackDiv.style.color = #dc3545;
-}
 
+function showFeedback(isValid, messages){
+feedbackDiv.style.display = "block";
+if(isValid){
+    feedbackDiv.textContent = "Registration Successful!";
+    feedbackDiv.style.color = "#28a745";
+} else{
+    feedbackDiv.innerHTML = messages.join("br>");
+    feedbackDiv.style.color = "#dc3545";
+}
+}
 
 });
