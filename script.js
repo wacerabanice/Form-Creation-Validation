@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     form.addEventListener('submit', function(event){
         event.preventDefault();
-        console.log('Form Submitted');
-    });
+    
 
     const usernameInput = document.getElementById("username").value.trim();
     const emailInput = document.getElementById("email").value.trim();
@@ -20,9 +19,9 @@ document.addEventListener('DOMContentLoaded', function(){
 let isValid = true;
 let messages = [];
 
-if(!username){
+if(!username.length < 3){
     isValid = false;
-    messages.push('Username is required');
+    messages.push('Username is required to have more than 3 characters');
 }
 
 
@@ -37,14 +36,6 @@ if(!passwordInput.length < 8){
 }
 
 
-if(!isValid){
-    console.log('Validation errors: ', messages);
-} else{
-console.log('Form successfully submitted')
-}
-
-
-function showFeedback(isValid, messages){
 feedbackDiv.style.display = "block";
 if(isValid){
     feedbackDiv.textContent = "Registration Successful!";
@@ -53,6 +44,6 @@ if(isValid){
     feedbackDiv.innerHTML = messages.join("br>");
     feedbackDiv.style.color = "#dc3545";
 }
-}
+});
 
 });
