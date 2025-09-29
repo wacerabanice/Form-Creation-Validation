@@ -44,10 +44,9 @@ console.log('Form successfully submitted')
 }
 
 feedbackDiv.style.display = 'block';
-
 if(isValid){
-    feedbackDiv.textContent = "Registration Successful!";
-    feedbackDiv.style.color = rgba(64, 142, 100, 1);
+    feedbackDiv.textContent = "Registration Successful";
+    feedbackDiv.style.color = #28a745;
 } else{
     feedbackDiv.innerHTML = messages.join('<br>');
     feedbackDiv.style.color = #dc3545;
