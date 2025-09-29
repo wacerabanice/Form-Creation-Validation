@@ -25,12 +25,12 @@ if(!username.length < 3){
 }
 
 
-if(!emailInput.includes('@') || !emailInput.includes('.')){
+if(!email.includes('@') || !email.includes('.')){
     isValid = false;
     messages.push('Provide a valid Email');
 }
 
-if(!passwordInput.length < 8){
+if(!password.length < 8){
     isValid = false;
     messages.push('Password must be atlease 8 characters long');
 }
